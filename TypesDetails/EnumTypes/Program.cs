@@ -18,3 +18,6 @@ switch (student1.State)
 }
 
 
+ErkekAkrabalikTipleri hemBabaHemAbi = ErkekAkrabalikTipleri.Abi | ErkekAkrabalikTipleri.Baba;
+
+Console.WriteLine(hemBabaHemAbi);
