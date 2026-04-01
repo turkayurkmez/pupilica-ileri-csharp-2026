@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="AnonymousType/AnonymousType.csproj" />
+  <Project Path="Delegates/Delegates.csproj" />
+</Solution>
