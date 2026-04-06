@@ -19,6 +19,11 @@ namespace LINQShowcase
         public string Category { get; set; }
 
         public bool IsActive { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Id}.....{Name}.....{Price}.....{Description}.....{AddToStockDate}.....{Category}.....{IsActive}";
+        }
     }
 
     public class  ProductService
@@ -41,6 +46,7 @@ namespace LINQShowcase
             new(){ Id=14, Name="Erkek Deri Kemer", Price=850, Description="Siyah Otomatik Tokalı Hakiki Deri", IsActive = false, AddToStockDate= new DateOnly(2025,4,5), CreatedDate=DateTime.Now, Category="Aksesuar"},
             new(){ Id=15, Name="Kadın Deri El Çantası", Price=6990, Description="Bordo Gerçek Deri Omuz Askılı", IsActive = true, AddToStockDate= new DateOnly(2025,3,22), CreatedDate=DateTime.Now, Category="Aksesuar"},
             new(){ Id=16, Name="Şapka Bucket Hat", Price=450, Description="Bej Pamuklu Unisex Yazlık", IsActive = true, AddToStockDate= new DateOnly(2025,6,8), CreatedDate=DateTime.Now, Category="Aksesuar"},
+             new(){ Id=16, Name="Şapka Bucket Hat", Price=450, Description="Bej Pamuklu Unisex Yazlık", IsActive = true, AddToStockDate= new DateOnly(2025,6,8), CreatedDate=DateTime.Now, Category="Aksesuar"}
         };
     }
 }
