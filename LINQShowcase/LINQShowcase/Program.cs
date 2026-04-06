@@ -1,4 +1,5 @@
 ﻿using LINQShowcase;
+using System.Collections.Concurrent;
 
 Console.WriteLine("Hello, World!");
 
@@ -49,3 +50,25 @@ Console.WriteLine(productsWithMaxPrice.Name);
 
 var productWithMinPrice = products.MinBy(p => p.Price);
 Console.WriteLine(productWithMinPrice.Name);
+
+Console.WriteLine("................ Varolan kategoriler ..............");
+var distinctCategories = products.DistinctBy(p => p.Category);
+foreach (var item in distinctCategories)
+{
+    Console.WriteLine(item.Category);
+}
+
+var numbers = Enumerable.Range(1, 15);
+Console.WriteLine(numbers.Count());
+
+var numbersCount = numbers.TryGetNonEnumeratedCount(out int count) ?  count : 0;
+Console.WriteLine(numbersCount);
+
+Console.WriteLine("--------------- CHUNK ------------------");
+var chunks = numbers.Chunk(size: 3);
+foreach (var chunk in chunks)
+{
+    Console.WriteLine($"[{string.Join(",",chunk)}]");
+}
+
+//ÖDEV: Her kategoride kaç adet ürün var, toplam ürün fiyatı nedir, ortalaması nedir, GroupBy kullanarak bulun.
