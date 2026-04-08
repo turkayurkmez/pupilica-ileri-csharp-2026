@@ -1,4 +1,6 @@
-﻿Console.WriteLine("Hello, World!");
+﻿using PatternMatching;
+
+Console.WriteLine("Hello, World!");
 
 
 
@@ -82,6 +84,34 @@ foreach (var item in temparatures)
 {
     Console.WriteLine( getWeatherCondition(item));
 }
+
+
+/*
+ *  [] => "Boş Array",
+                [8] => "Tek elemanlı ve o da 8 değeri",
+                [1,2,..]=> "Array 1 ve 2 ile başlıyor....",
+                [..,999]=>"999 ile bitiyor!",
+                [1,..,9]=>"1 ile başlayıp 9 ile bitiyor",
+                [var first,.., var last] => $"bu array, {first} ile başlıyor, {last} ile bitiyor",
+ */
+
+var array1 = new int[0];
+var array2 = new int[] {1,2,9,16 };
+var array3 = new int[] { 9, 16,999 };
+var array4 = new int[] { 10, 2, 3, 4, 5, 6, 7, 8, 90 };
+var array5 = new int[] { 1, -2, 3, 4, 5, 6, 7, 8, 9 };
+
+
+Console.WriteLine(ListPatterns.analyseIntArrayModernWay(array1));
+Console.WriteLine(ListPatterns.analyseIntArrayModernWay(array2));
+Console.WriteLine(ListPatterns.analyseIntArrayModernWay(array3));
+Console.WriteLine(ListPatterns.analyseIntArrayModernWay(array4));
+Console.WriteLine(ListPatterns.analyseIntArrayModernWay(array5));
+
+
+
+
+
 
 
 public record Person(string Name, string City, string Job, int Age);

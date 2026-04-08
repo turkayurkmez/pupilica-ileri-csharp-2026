@@ -8,6 +8,7 @@ Bu proje, C# dilindeki **Pattern Matching** (desen eşleme) özelliklerini uygul
 - Farklı pattern matching türlerini ve kullanım senaryolarını öğrenmek
 - `switch` ifadesi yerine **switch expression** kullanımını benimsemek
 - `record` türlerinin pattern matching ile birlikte nasıl kullanıldığını anlamak
+- Dizi ve liste yapıları üzerinde **list pattern** kullanarak eleman bazlı eşleme yapmayı öğrenmek
 
 ## Aktarılan Konular
 
@@ -29,6 +30,9 @@ Desen içinde bir değeri değişkene atayıp (`var c`), ardından `when` anahta
 ### 6. Record Türleri
 `record` anahtar kelimesiyle değer odaklı, değiştirilemez (immutable) veri modelleri oluşturma. Pattern matching ile doğal uyumu.
 
+### 7. List Patterns (Liste Desenleri)
+Dizi veya liste elemanlarını konumlarına göre eşleştirme. Boş dizi kontrolü (`[]`), tek elemanlı eşleme (`[8]`), başlangıç elemanlarına göre eşleme (`[1,2,..]`), bitiş elemanına göre eşleme (`[..,999]`), hem baş hem son eleman kontrolü (`[1,..,9]`) gibi senaryolar. **Discard pattern** (`..`) ile aradaki elemanları atlayarak yalnızca ilgili pozisyonlara odaklanma. Ayrıca `var` ile yakalama (`[var first,..,var last]`) kullanılarak eşleşen elemanların değişkenlere atanması.
+
 ## Proje Yapısı
 
 ```
@@ -36,5 +40,6 @@ PatternMatching/
 ├── README.md
 └── PatternMatching/
     ├── PatternMatching.csproj
-    └── Program.cs
+    ├── Program.cs
+    └── ListPatterns.cs
 ```
