@@ -20,6 +20,7 @@ namespace GCMechanism
         public void Dispose()
         {
             //Dispose pattern, recursive inşa edilebilir (bazı durumlarda)
+            //Bir şeyler daha değiştirdim.
             FileStream.Close();
             FileStream.Dispose();
 
