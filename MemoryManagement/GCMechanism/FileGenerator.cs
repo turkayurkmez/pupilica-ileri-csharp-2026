@@ -19,6 +19,7 @@ namespace GCMechanism
         //OOP paradigmasına uygun bir yaklaşım:
         public void Dispose()
         {
+            //Dispose pattern, recursive inşa edilebilir (bazı durumlarda)
             FileStream.Close();
             FileStream.Dispose();
 
