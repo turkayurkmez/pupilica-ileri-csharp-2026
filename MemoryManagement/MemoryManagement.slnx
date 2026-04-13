@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="GCMechanism/GCMechanism.csproj" />
+  <Project Path="MemoryFriendlyTypes/MemoryFriendlyTypes.csproj" Id="9b8854e6-1004-4281-903f-71a72f5dcc87" />
 </Solution>
