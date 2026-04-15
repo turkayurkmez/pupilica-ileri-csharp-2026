@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Display.Aplplication/Display.Aplplication.csproj" />
+  <Project Path="Display.Library/Display.Library.csproj" />
+  <Project Path="Display.SDK/Display.SDK.csproj" />
+</Solution>
