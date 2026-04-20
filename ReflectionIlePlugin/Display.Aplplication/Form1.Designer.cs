@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             menuStrip1 = new MenuStrip();
-            splitContainer1 = new SplitContainer();
-            numericUpDownX = new NumericUpDown();
-            numericUpDownY = new NumericUpDown();
             pluginsToolStripMenuItem = new ToolStripMenuItem();
             pluginAddMenuItem = new ToolStripMenuItem();
+            splitContainer1 = new SplitContainer();
             numericUpDownWidth = new NumericUpDown();
+            numericUpDownY = new NumericUpDown();
+            numericUpDownX = new NumericUpDown();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownX).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownY).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownWidth).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownY).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownX).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -53,6 +53,20 @@
             menuStrip1.Size = new Size(800, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
+            // 
+            // pluginsToolStripMenuItem
+            // 
+            pluginsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { pluginAddMenuItem });
+            pluginsToolStripMenuItem.Name = "pluginsToolStripMenuItem";
+            pluginsToolStripMenuItem.Size = new Size(70, 24);
+            pluginsToolStripMenuItem.Text = "Plugins";
+            // 
+            // pluginAddMenuItem
+            // 
+            pluginAddMenuItem.Name = "pluginAddMenuItem";
+            pluginAddMenuItem.Size = new Size(164, 26);
+            pluginAddMenuItem.Text = "Plugin Ekle";
+            pluginAddMenuItem.Click += pluginAddMenuItem_Click;
             // 
             // splitContainer1
             // 
@@ -70,12 +84,12 @@
             splitContainer1.SplitterDistance = 266;
             splitContainer1.TabIndex = 1;
             // 
-            // numericUpDownX
+            // numericUpDownWidth
             // 
-            numericUpDownX.Location = new Point(30, 31);
-            numericUpDownX.Name = "numericUpDownX";
-            numericUpDownX.Size = new Size(150, 27);
-            numericUpDownX.TabIndex = 0;
+            numericUpDownWidth.Location = new Point(30, 97);
+            numericUpDownWidth.Name = "numericUpDownWidth";
+            numericUpDownWidth.Size = new Size(150, 27);
+            numericUpDownWidth.TabIndex = 2;
             // 
             // numericUpDownY
             // 
@@ -84,26 +98,12 @@
             numericUpDownY.Size = new Size(150, 27);
             numericUpDownY.TabIndex = 1;
             // 
-            // pluginsToolStripMenuItem
+            // numericUpDownX
             // 
-            pluginsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { pluginAddMenuItem });
-            pluginsToolStripMenuItem.Name = "pluginsToolStripMenuItem";
-            pluginsToolStripMenuItem.Size = new Size(70, 24);
-            pluginsToolStripMenuItem.Text = "Plugins";
-            // 
-            // pluginAddMenuItem
-            // 
-            pluginAddMenuItem.Name = "pluginAddMenuItem";
-            pluginAddMenuItem.Size = new Size(224, 26);
-            pluginAddMenuItem.Text = "Plugin Ekle";
-            pluginAddMenuItem.Click += pluginAddMenuItem_Click;
-            // 
-            // numericUpDownWidth
-            // 
-            numericUpDownWidth.Location = new Point(30, 97);
-            numericUpDownWidth.Name = "numericUpDownWidth";
-            numericUpDownWidth.Size = new Size(150, 27);
-            numericUpDownWidth.TabIndex = 2;
+            numericUpDownX.Location = new Point(30, 31);
+            numericUpDownX.Name = "numericUpDownX";
+            numericUpDownX.Size = new Size(150, 27);
+            numericUpDownX.TabIndex = 0;
             // 
             // Form1
             // 
@@ -120,9 +120,9 @@
             splitContainer1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)numericUpDownX).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDownY).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownWidth).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownY).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownX).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

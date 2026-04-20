@@ -22,12 +22,26 @@ namespace Display.Aplplication
             }
         }
 
+        Dictionary<string,Plug> loadedPlugins = new Dictionary<string,Plug>();
         private void addToMenu(List<Plug> plugs)
         {
             plugs.ForEach(p => {
                 ToolStripMenuItem menuItem = new ToolStripMenuItem(p.Name);
                 pluginsToolStripMenuItem.DropDownItems.Add(menuItem);
+                menuItem.Click += MenuItem_Click;
+                loadedPlugins.Add(p.Name, p);
             });
+        }
+
+
+        private void MenuItem_Click(object? sender, EventArgs e)
+        {
+            var name = (sender as ToolStripMenuItem).Text;
+            Plug plug = loadedPlugins[name];
+            IPlugin pluginInterface = Helper.CreateInstance(plug);
+            pluginInterface.Draw(splitContainer1.Panel2.CreateGraphics(), new SolidBrush(Color.Blue), (int)numericUpDownX.Value, (int)numericUpDownY.Value, (int)numericUpDownWidth.Value, (int)numericUpDownWidth.Value);
+
+
         }
     }
 }

@@ -35,7 +35,11 @@ namespace Display.SDK
             var types = assembly.GetTypes();
             types?.ToList().ForEach(type => {
                 Plug plug = handShakeForApp(type, dllFile);
-                plugs.Add(plug);
+                if (plug != null)
+                {
+                    plugs.Add(plug);
+                }
+               
             });
         }
 
@@ -48,15 +52,24 @@ namespace Display.SDK
                 plug.Path = dllFile;
                 plug.FullName = type.FullName;
                 //Kare k = new Kare();
-                var instance = Activator.CreateInstance(type);
+                dynamic instance = Activator.CreateInstance(type);
                 //plug.Name=k.Name
-                plug.Name = instance!.GetType().GetProperty("Name").GetValue(instance).ToString();
+                //plug.Name = instance!.GetType().GetProperty("Name").GetValue(instance).ToString();
+
+                plug.Name = instance.Name;
 
 
 
             }
 
             return plug;
+        }
+
+        public static IPlugin CreateInstance(Plug plug)
+        {
+            Assembly assembly = Assembly.LoadFile(plug.Path);
+            var instance = assembly.CreateInstance(plug.FullName);
+            return (IPlugin)instance;
         }
     }
 }
